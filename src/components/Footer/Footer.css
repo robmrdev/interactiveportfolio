@@ -1,0 +1,17 @@
+footer{
+    padding: 100px 0;
+    background-color: var(--darkFont);
+}
+.footerInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footerInfo>p{
+    max-width: 30em;
+}
+.contactFooter{
+    display: flex;
+    gap: 15px;
+}

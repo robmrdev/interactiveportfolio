@@ -1,0 +1,49 @@
+.adTapesWrapper{
+    padding: 100px 0;
+}
+.adTapeTex{
+    overflow: hidden;
+    width: 110%;
+    margin-left: -15px;
+    color: var(--darkFont);
+    border-top: 1px solid var(--darkFont);
+    border-bottom: 1px solid var(--darkFont);
+    background-color: var(--lightFont);
+
+}
+.adTapeTexInner{
+    display: flex;
+}
+.adTapeTexInner p {
+  flex-shrink: 0;
+  font-size: 1vw;
+  line-height: 1.4;
+  margin: 7px 0;
+  white-space: wrap;
+  animation-name: adTape;
+  animation-duration: 15s;
+  animation-timing-function:linear;
+  animation-iteration-count: infinite;
+}
+.tape1{
+    transform: rotate(-8deg);
+    z-index: 2;
+    margin-top: -35px;
+}
+.tape2{
+    transform: rotate(2deg);
+    z-index: 1;
+}
+.tape2 p{
+    animation-direction: reverse;
+}
+
+@keyframes adTape {
+    from {
+      transform: translateX(0);
+    }
+    
+    to {
+      transform: translateX(-100%);
+    }
+  }

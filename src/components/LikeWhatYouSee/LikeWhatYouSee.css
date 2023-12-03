@@ -1,0 +1,41 @@
+.likeWhatYouSee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.getInTouchContainer{
+    min-width: 28em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 40px;
+}
+.getInTouchContainer h4{
+    font-size: 32px;
+}
+.getInTouchButton{
+    margin-top: 30px;
+    height: 55px;
+    font-size: 18px;
+    width: 100%;
+    background-color: var(--darkish);
+    color: var(--lightFont);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.likeWhatYouSee .tape1{
+    transform: rotate(-4deg);
+}
+.likeWhatYouSee .adTapeTex{
+    background-color: var(--darkFont);
+    color: var(--lightFont);
+    border-color: var(--lightFont);
+}
+
+.likeWhatYouSeeTapes{
+    margin-top: -120px;
+    margin-bottom: 120px;
+}

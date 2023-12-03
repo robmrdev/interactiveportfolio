@@ -1,0 +1,8 @@
+.teamCardsContainer{
+    padding-bottom: 100px;
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}

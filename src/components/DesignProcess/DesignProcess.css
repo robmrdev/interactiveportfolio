@@ -1,0 +1,40 @@
+.designWrapper{
+    background-color: var(--darkFont);
+}
+.designWrapper .contentWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.designWrapper .contentWrapper>p{
+    text-align: center;
+    max-width: 50em;
+    font-size: 18px;
+}
+.designContent{
+    margin-top: 40px;
+}
+.designFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+.designReverse{
+    flex-direction: row-reverse;
+}
+.designInfoText{
+    padding: 100px 0;
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    max-height: 24.5em;
+}
+.designFlex img{
+    height: auto;
+}
+
+
