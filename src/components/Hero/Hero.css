@@ -1,44 +1,54 @@
-.heroBackground{
+.heroBackground {
     background-color: blueviolet;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 40px;
 }
-header{
+
+header {
     background-color: blueviolet;
     display: flex;
     justify-content: center;
     padding: 0 5%;
 }
-header>div{
+
+header>div {
     width: 100%;
     max-width: 1600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.brandLogo{
-    align-self:baseline;
+
+.brandLogo {
+    align-self: baseline;
     height: 90px;
-    padding: 10px 0 ;
+    padding: 10px 0;
     margin-bottom: 20px;
 }
-header p{
+
+header p {
     font-size: 18px;
 }
-.heroContentWrapper{
+
+.heroContentWrapper {
     padding: 5em 2em 3.2em;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.heroContentWrapper .topTitleWrapper{
+
+.heroContentWrapper .topTitleWrapper {
     display: flex;
     font-size: 1vw;
+    opacity: 0;
+    animation: appear ease-in-out 1s forwards;
+    animation-delay: 0.55s;
 }
-.topTitle{
+
+.topTitle {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 14px;
@@ -47,17 +57,26 @@ header p{
     line-height: 1.2;
     display: inline;
 }
-.heroText{
+
+.heroText {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     max-width: 70%;
-    font-size: 8em;
+    font-size: 7vw;
     text-align: center;
     line-height: 1;
 }
-.heroBottom{
+.heroWord{
+    display: flex;
+}
+
+.heroBottom {
     display: flex;
     margin: 1em auto
 }
-.heroMiddle{
+
+.heroMiddle {
     max-width: 60%;
     display: flex;
     flex-direction: column;
@@ -65,27 +84,44 @@ header p{
     text-align: center;
     padding: 0 10px;
 }
-.bottomleft{
+
+.bottomleft {
     background-color: aquamarine;
     flex: 1;
     margin-top: -9em;
+    opacity: 0;
+    animation: appear ease-in-out 1s forwards;
+    animation-delay: 0.68s;
 }
-.bottomright{
+
+.bottomright {
     background-color: aquamarine;
     flex: 1;
     margin-top: -9em;
+    opacity: 0;
+    animation: appear ease-in-out 1s forwards;
+    animation-delay: 1.1s;
 }
-.heroP{
+
+.heroP {
     font-size: 20px;
     line-height: 1.4em;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: appear ease-in-out 1s forwards;
+    animation-delay: 0.85s;
 }
-.heroButtons{
+
+.heroButtons {
     margin-top: 30px;
     display: flex;
     gap: 20px;
+    opacity: 0;
+    animation: appear ease-in-out 1s forwards;
+    animation-delay: 0.99s;
 }
-.heroButton{
+
+.heroButton {
     width: 200px;
     height: 55px;
     cursor: pointer;
@@ -100,5 +136,28 @@ header p{
     font-size: 18px;
 }
 
+.heroCharacter{
+    opacity: 0;    
+    transform: translateY(10px);
+    animation: appearBottom 0.5s ease-in-out forwards;
+}
 
+@keyframes appearBottom {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
+    @keyframes appear {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }

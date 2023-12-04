@@ -1,60 +1,10 @@
-import { useRef, useLayoutEffect } from 'react';
 import './Hero.css'
-import gsap from 'gsap'
-
-
-
-
-
+import React from 'react';
 const Hero = () => {
 
-//     gsap.registerPlugin(SplitText);
-
-// const tl = gsap.timeline(),
-//   mySplitText = new SplitText("#quote", { type: "words,chars" }),
-//   chars = mySplitText.chars; //an array of all the divs that wrap each character
-
-// gsap.set("#quote", { perspective: 400 });
-
-// console.log(chars);
-
-// tl.from(chars, {
-//   duration: 0.8,
-//   opacity: 0,
-//   scale: 0,
-//   y: 80,
-//   rotationX: 180,
-//   transformOrigin: "0% 50% -50",
-//   ease: "back",
-//   stagger: 0.01
-// });
-
-// const component = useRef(); // a ref for the root-level element; we use selector text for everything else.
-
-//   useLayoutEffect(() => {
-    
-//     // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
-//     let ctx = gsap.context(() => {
-
-//       let split = SplitText.create("h1", {type:"chars"});
-      
-//       gsap.from(split.chars, { // <- selector text, scoped to this component!
-//         opacity: 0,
-//         y: 100,
-//         ease: "back",
-//         duration: 1,
-//         stagger: 0.1
-//       });
-      
-//       return () => split.revert(); // context cleanup
-      
-//     }, component); // <- scopes all selector text inside the context to this component (optional, default is document)
-    
-//     return () => ctx.revert(); // useLayoutEffect cleanup
-//   }, []);
-
-
-
+    const text = "The web you were looking for is Here!";
+    const words = text.split(' ');
+    let indexCounter = 0;
     return (
         <>
             <header>
@@ -69,7 +19,32 @@ const Hero = () => {
                         <div className='topTitleWrapper'>
                             <p className='topTitle'>I'm Robert Mendoza, a&nbsp;</p> <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
                         </div>
-                        <h3 className='heroText' id="quote" >The web you where looking for its Here!</h3>
+                        <h3 className='heroText'>
+                            {words.map((word, wordIndex) => (
+                                <React.Fragment key={wordIndex}>
+                                    {wordIndex > 0 && <span className="wordSpace">&nbsp;</span>}
+                                    <div className='heroWord'>
+                                        {word.split('').map((letter, letterIndex) => {
+                                            indexCounter += 1;
+                                            return (
+                                                <div
+                                                    key={letterIndex}
+                                                    className='heroCharacter'
+                                                    style={{
+                                                        opacity: 0,
+                                                        transform: 'translateY(10px)',
+                                                        animation: 'appearBottom 0.5s ease-in-out forwards',
+                                                        animationDelay: `${0.05 * indexCounter}s`
+                                                    }}
+                                                >
+                                                    {letter === ' ' ? '\u00A0' : letter}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </React.Fragment>
+                            ))}
+                        </h3>
                         <div className='heroBottom'>
                             <div className='bottomleft'></div>
                             <div className='heroMiddle'>
@@ -89,3 +64,29 @@ const Hero = () => {
 }
 
 export default Hero
+
+
+
+{/* <h3 className='heroText'>
+      {words.map((word, wordIndex) => (
+        <React.Fragment key={wordIndex}>
+          {wordIndex > 0 && <span className="wordSpace">&nbsp;</span>}
+          <span className='heroWord'>
+            {word.split('').map((letter, letterIndex) => (
+              <span
+                key={letterIndex}
+                className='heroCharacter'
+                style={{
+                  opacity: 0,
+                  transform: 'translateY(10px)',
+                  animation: 'appear 0.5s ease-in-out forwards',
+                  animationDelay: `${0.1 * (wordIndex + 1) + 0.1 * (letterIndex + 1)}s`
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </span>
+        </React.Fragment>
+      ))}
+    </h3> */}
