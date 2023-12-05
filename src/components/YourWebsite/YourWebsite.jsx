@@ -1,6 +1,6 @@
 import './YouWebsite.css'
 
-const YourWebsite = () => {
+const YourWebsite = ({setShow}) => {
   return (
     <section>
       <div className='contentWrapper'>
@@ -10,7 +10,7 @@ const YourWebsite = () => {
         <div className='columnWrapper'>
           <div className='getInTouchContainer'>
             <h4>Let's talk!</h4>
-            <div className='getInTouchButton'>Get in Touch</div>
+            <div className='getInTouchButton' onClick={()=>setShow(true)}>Get in Touch</div>
           </div>
           <img src="https://dummyimage.com/250x320/000000/fff" alt="" />
         </div>

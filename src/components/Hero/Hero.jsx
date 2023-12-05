@@ -1,6 +1,6 @@
 import './Hero.css'
 import React from 'react';
-const Hero = () => {
+const Hero = ({setShow}) => {
 
     const text = "The web you were looking for is Here!";
     const words = text.split(' ');
@@ -50,7 +50,7 @@ const Hero = () => {
                             <div className='heroMiddle'>
                                 <p className='heroP'>As you heard. I'm the one you where Looking for. I desing innovative WebFlow websites that show the best of your Brand, you'll Wow your clients and get a way better credibility on your already wonderfull organization.</p>
                                 <div className='heroButtons'>
-                                    <div className='lightFont heroButton'>Get in Touch</div>
+                                    <div className='lightFont heroButton' onClick={()=>setShow(true)}>Get in Touch</div>
                                     <div className='lightFont heroButton'>See portfolio</div>
                                 </div>
                             </div>

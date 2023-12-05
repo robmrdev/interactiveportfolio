@@ -1,11 +1,11 @@
 import './LikeWhatYouSee.css'
 
-const LikeWhatYouSee = () => {
+const LikeWhatYouSee = ({setShow}) => {
   return (
     <section className='likeWhatYouSee'>
       <div className='getInTouchContainer'>
         <h4>Like what you see?</h4>
-        <div className='getInTouchButton'>Get in Touch</div>
+        <div className='getInTouchButton' onClick={()=>setShow(true)}>Get in Touch</div>
       </div>
       <img src="https://dummyimage.com/200x600/000000/fff" alt="" />
       <div className='likeWhatYouSeeTapes'>

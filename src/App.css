@@ -5,7 +5,7 @@
     --darkFont: blueviolet;
     --darkish: rgb(157, 74, 235);
     --lightFont: antiquewhite;
-
+    font-family: 'Poppins', sans-serif;
 }
 
 .darkFont{
