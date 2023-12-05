@@ -1,5 +1,5 @@
 .heroBackground {
-    background-color: blueviolet;
+    background-color: var(--darkFont);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 header {
-    background-color: blueviolet;
+    background-color: var(--darkFont);
     display: flex;
     justify-content: center;
     padding: 0 5%;
@@ -133,7 +133,7 @@ header p {
     display: flex;
     position: relative;
     overflow: hidden;
-    background-color: blueviolet;
+    background-color: var(--darkFont);
     font-size: 18px;
 }
 

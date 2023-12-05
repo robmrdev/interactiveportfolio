@@ -1,9 +1,10 @@
+import { waveEffect } from '../../utils/utils'
 import './OurTeam.css'
 
 const OurTeam = () => {
     return (
         <section className='contentWrapper'>
-            <h3 className='sectionTitle'>Our Team</h3>
+            {waveEffect('Our Team')}
             <p className='sectionDesc'>Wearing different hats is my norm here.</p>
             <div className='teamCardsContainer'>
                 <div>

@@ -55,7 +55,7 @@ const ContactForm = ({show, setShow}) => {
                             <p>Design</p>
                         </div>
                     </div>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="" id="" placeholder='Say Hi!' ></textarea>
                     <input type="submit" value="Submit" className='getInTouchButton'/>
                 </form>
             </div>

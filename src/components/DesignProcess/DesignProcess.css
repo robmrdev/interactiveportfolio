@@ -6,6 +6,34 @@
     flex-direction: column;
     align-items: center;
 }
+.contactTitle{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contactTitle.animationStarted > div > div{
+    animation: waveAnimation 1s ease-out forwards;
+}
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.contactWord{
+    display: flex;
+}
+.designCharacter{
+    margin: -3.5px;
+}
 .designWrapper .contentWrapper>p{
     text-align: center;
     max-width: 50em;

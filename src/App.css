@@ -2,8 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    --darkFont: blueviolet;
-    --darkish: rgb(157, 74, 235);
+    --darkFont: #16642f;
+    --darkish: #42bb69;
     --lightFont: antiquewhite;
     font-family: 'Poppins', sans-serif;
 }

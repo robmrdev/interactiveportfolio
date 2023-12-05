@@ -31,9 +31,6 @@ const Hero = ({setShow}) => {
                                                     key={letterIndex}
                                                     className='heroCharacter'
                                                     style={{
-                                                        opacity: 0,
-                                                        transform: 'translateY(10px)',
-                                                        animation: 'appearBottom 0.5s ease-in-out forwards',
                                                         animationDelay: `${0.05 * indexCounter}s`
                                                     }}
                                                 >
