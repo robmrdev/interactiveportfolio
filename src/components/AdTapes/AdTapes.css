@@ -1,5 +1,7 @@
 .adTapesWrapper{
     padding: 100px 0;
+    padding-top: 80px;
+    width: 100vw;
 }
 .adTapeTex{
     overflow: hidden;

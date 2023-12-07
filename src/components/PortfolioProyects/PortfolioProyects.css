@@ -1,10 +1,12 @@
 .portfolioProyectsWrapper {
-    height: 200vh;
+    height: 155vh;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .portfolioProyectsContainer {
+    overflow: hidden;
     position: absolute;
     left: 0;
     width: 100%;
