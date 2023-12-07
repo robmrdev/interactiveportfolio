@@ -11,9 +11,9 @@ const Portfolio = () => {
                 you know, those 'learning' days, the web equivalent of baby steps. But hang on, the magic's
                 coming! Brace yourself for websites born from the ashes, rising each time, stronger and fancier!
                 Click those images to unveil the chronicles of my coding escapades – each one crazier than the last!</p>
-            <div className='portfolioItemsWrapper'>
+            {/* <div className='portfolioItemsWrapper'> */}
                 <PortfolioProyects/>
-            </div>
+            {/* </div> */}
         </section>
     )
 }

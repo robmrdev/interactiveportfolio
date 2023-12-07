@@ -17,7 +17,7 @@ const Hero = ({setShow}) => {
                 <div className='heroWrapper darkFont contentWrapper'>
                     <div className='heroContentWrapper'>
                         <div className='topTitleWrapper'>
-                            <p className='topTitle'>I'm Robert Mendoza, a&nbsp;</p> <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
+                            <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p> <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
                         </div>
                         <h3 className='heroText'>
                             {words.map((word, wordIndex) => (

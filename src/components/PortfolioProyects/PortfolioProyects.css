@@ -1,3 +1,30 @@
-.portfolioProyectsContainer{
-    height: 100vh;
+.portfolioProyectsWrapper {
+    height: 200vh;
+    width: 100%;
+    position: relative;
+}
+
+.portfolioProyectsContainer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.box {
+    position: relative;
+    left: -20vw;
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-bottom: 5px solid red;
+}
+
+.rightEl{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
 }
