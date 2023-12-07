@@ -7,8 +7,8 @@ const DesignProcess = () => {
     return (
         <section className='designWrapper'>
             <div className='contentWrapper'>
-                {waveEffect("Design & Development Process")}
-                <p>Processes are the silent wizards that help us save time and energy. The idea is to create a
+                {waveEffect("Design & Development Process")}    
+                <p className='designSubText'>Processes are the silent wizards that help us save time and energy. The idea is to create a
                     structured workflow, typically spanning 4 to 6 weeks based on your specific needs.</p>
                 <div className='designContent'>
                     <div className='designFlex'>

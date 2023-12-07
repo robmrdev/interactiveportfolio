@@ -1,6 +1,10 @@
 .designWrapper{
     background-color: var(--darkFont);
 }
+.designWrapper h2, .designSubText{
+    color: var(--lightFont);
+}
+
 .designWrapper .contentWrapper{
     display: flex;
     flex-direction: column;
