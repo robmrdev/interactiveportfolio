@@ -1,8 +1,9 @@
 .portfolioProyectsWrapper {
-    height: 155vh;
+    height: 230vh;
     width: 100%;
     position: relative;
     overflow: hidden;
+    
 }
 
 .portfolioProyectsContainer {
@@ -10,23 +11,30 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: 150vh;
+    height: 230vh;
     background-color: lightgray;
     padding: 20px;
 }
 
 .box {
     position: relative;
-    left: -20vw;
-    background-color: black;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border-bottom: 5px solid red;
+    left: -10vw;
+    /* background-color: black; */
+    width: 80px;
+    height: 80px;
+    /* border-radius: 50%;
+    border-bottom: 5px solid red; */
 }
 
 .rightEl{
-    width: 200px;
-    height: 200px;
-    background-color: blue;
+    width: 30vh;
+    margin-top: 10vh;
+}
+.rightEl img{
+    height: 30vh;
+}
+.proyectList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
