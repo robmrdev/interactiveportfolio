@@ -23,11 +23,11 @@ const Hero = ({ setShow, targetRef }) => {
                 </div>
                 <img src="./hero/sun.png" alt="" srcset="" className='sun' />
                 <div className='heroWrapper darkFont contentWrapper'>
-                    <div className='heroContentWrapper'>
-                        <div className='topTitleWrapper'>
-                            <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p> <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
-                        </div>
-                        <h3 className='heroText'>
+                    <div className='heroContentWrapper'><div className='topTitleWrapper textGlow'>
+                        <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p>
+                        <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
+                    </div>
+                        <h3 className='heroText textGlow'>
                             {words.map((word, wordIndex) => (
                                 <React.Fragment key={wordIndex}>
                                     {wordIndex > 0 && <span className="wordSpace">&nbsp;</span>}
@@ -52,7 +52,7 @@ const Hero = ({ setShow, targetRef }) => {
                         </h3>
                         <div className='heroBottom'>
                             <div className='heroMiddle'>
-                                <p className='heroP'>As you heard. I'm the one you where Looking for. I desing innovative websites that show the best of your Brand, you'll Wow your clients and get a way better credibility on your already wonderfull organization.</p>
+                                <p className='heroP textGlow'>As you heard. I'm the one you where Looking for. I desing innovative websites that show the best of your Brand, you'll Wow your clients and get a way better credibility on your already wonderfull organization.</p>
                                 <div className='heroButtons'>
                                     <div className='lightFont heroButton' onClick={() => setShow(true)}>Get in Touch</div>
                                     <div className='lightFont heroButton' onClick={targetRef}>See portfolio</div>

@@ -1,3 +1,44 @@
+/* .textGlow {
+    color: black; 
+    position: relative;
+    
+}
+
+.textGlow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: 10px;
+    z-index: -1;
+    width: calc(100% + 20px);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.595); 
+    filter: blur(10px);
+} */
+.textGlow {
+    color: black;
+    /* Color del texto */
+    position: relative;
+    display: inline-block;
+    /* Para que el fondo se ajuste al contenido del texto */
+}
+
+.textGlow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(239, 242, 184, 0.595);
+    /* Color del resplandor */
+    filter: blur(50px);
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+}
+
 .heroBackground {
     /* background-color: var(--darkFont); */
     display: flex;
@@ -7,6 +48,8 @@
     justify-content: center;
     padding-bottom: 40px;
     height: 90vh;
+    background-color: transparent;
+    z-index: -10;
 }
 
 .heroBackground>img {
@@ -39,7 +82,7 @@
 
 .seaContainer {
     position: absolute;
-    bottom: 108px;
+    bottom: 120px;
     height: 209px;
     z-index: -2;
     background-color: white;
@@ -90,7 +133,7 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--lightFont);
+    color: var(--darkFont);
 }
 
 .heroContentWrapper .topTitleWrapper {
@@ -149,6 +192,7 @@ header p {
     opacity: 0;
     animation: appear ease-in-out 1s forwards;
     animation-delay: 0.85s;
+    padding: 10px 0;
 }
 
 .heroButtons {
@@ -179,26 +223,36 @@ header p {
     opacity: 0;
     transform: translateY(10px);
     animation: appearBottom 0.5s ease-in-out forwards;
+    /* background-color: black; */
 }
 
-@keyframes sunAppears{
+@keyframes sunAppears {
     from {
         bottom: -100px;
     }
-    to{
+
+    to {
         bottom: 330px;
     }
 }
+
 @keyframes waterMoves {
-    /* 0%{
-        transform: translateX(0);
-    } */
-    33%{
-        transform: translateX(-15px);
+    0% {
+        /* transform: translate(0); */
     }
-    66%{
-        transform: translateX(15px);
+
+    
+    33% {
+        rotate: 0.5deg;
+        transform: translateY(5px) translateX(-15px);
     }
+
+    
+    66% {
+        transform: translateY(-5px) translateX(15px);
+        rotate: -0.5deg;
+    }
+
     /* 75%{
         transform: translateY(0);
     } */
