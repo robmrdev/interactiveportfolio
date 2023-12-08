@@ -2,6 +2,8 @@
     padding: 100px 0;
     padding-top: 80px;
     width: 100vw;
+    position: relative;
+    z-index: 10;
 }
 .adTapeTex{
     overflow: hidden;
@@ -29,12 +31,10 @@
 }
 .tape1{
     transform: rotate(-8deg);
-    z-index: 2;
     margin-top: -35px;
 }
 .tape2{
     transform: rotate(2deg);
-    z-index: 1;
 }
 .tape2 p{
     animation-direction: reverse;

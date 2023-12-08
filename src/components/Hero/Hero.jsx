@@ -1,6 +1,6 @@
 import './Hero.css'
 import React from 'react';
-const Hero = ({setShow}) => {
+const Hero = ({ setShow, targetRef }) => {
 
     const text = "The web you were looking for is Here!";
     const words = text.split(' ');
@@ -14,6 +14,14 @@ const Hero = ({setShow}) => {
                 </div>
             </header>
             <div className='heroBackground'>
+                <img src="./hero/land.png" alt="" className='land' />
+                <img src="./hero/treeLeft.png" alt="" className='treeLeft' />
+                <img src="./hero/treeRight.png" alt="" className='treeRight' />
+                <img src="./hero/mountain.png" alt="" srcset="" className='mountain' />
+                <div className='seaContainer'>
+                    <img src="./hero/sea.png" alt="" srcset="" className='sea' />
+                </div>
+                <img src="./hero/sun.png" alt="" srcset="" className='sun' />
                 <div className='heroWrapper darkFont contentWrapper'>
                     <div className='heroContentWrapper'>
                         <div className='topTitleWrapper'>
@@ -43,15 +51,13 @@ const Hero = ({setShow}) => {
                             ))}
                         </h3>
                         <div className='heroBottom'>
-                            <div className='bottomleft'></div>
                             <div className='heroMiddle'>
-                                <p className='heroP'>As you heard. I'm the one you where Looking for. I desing innovative WebFlow websites that show the best of your Brand, you'll Wow your clients and get a way better credibility on your already wonderfull organization.</p>
+                                <p className='heroP'>As you heard. I'm the one you where Looking for. I desing innovative websites that show the best of your Brand, you'll Wow your clients and get a way better credibility on your already wonderfull organization.</p>
                                 <div className='heroButtons'>
-                                    <div className='lightFont heroButton' onClick={()=>setShow(true)}>Get in Touch</div>
-                                    <div className='lightFont heroButton'>See portfolio</div>
+                                    <div className='lightFont heroButton' onClick={() => setShow(true)}>Get in Touch</div>
+                                    <div className='lightFont heroButton' onClick={targetRef}>See portfolio</div>
                                 </div>
                             </div>
-                            <div className='bottomright'></div>
                         </div>
                     </div>
                 </div>

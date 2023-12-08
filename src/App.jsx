@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import AdTapes from './components/AdTapes/AdTapes'
 import Portfolio from './components/Portfolio/Portfolio'
@@ -12,11 +12,17 @@ import ContactForm from './components/ContactForm/ContactForm'
 
 function App() {
   const [show, setShow]=useState(false)
+  const targetRef = useRef(null);
 
+  const scrollToTarget = () => {
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
       <ContactForm show ={show} setShow={setShow}/>
-      <Hero setShow={setShow}/>
+      <Hero setShow={setShow} targetRef={scrollToTarget}/>
       <AdTapes/>
       <Portfolio/>
       <LikeWhatYouSee setShow={setShow}/>
