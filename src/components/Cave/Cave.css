@@ -1,13 +1,10 @@
-
 .caveWrapper{
+    margin-top: 5vh;
     height: 130vh;
-    margin-top: 20vh;
 }
 .caveContainer{
     position: relative;
     height: 100%;
-    /* width: 100vw; */
-    overflow: hidden;
 }
 .caveContainer img{
     position: absolute;
@@ -17,9 +14,22 @@
     right: 0;
 }
 .topCave{
-    top: 0;
+    top: -5vh;
+    left: 0;
     width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
 }
+/* .topCave::before {
+    content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  z-index: 11;
+} */
 .bottomCave{
     bottom: 0;
     width: 100%;

@@ -14,6 +14,7 @@ const Hero = ({ setShow, targetRef }) => {
                 </div>
             </header>
             <div className='heroBackground'>
+                <div className='heroVignette'></div>
                 <img src="./hero/bg5.jpg" alt="" srcset="" className='backgroundImg'/>
                 <img src="./hero/path3.png" alt="" srcset="" className='leftMiddle'/>
                 <img src="./hero/rightPath.png" alt="" srcset="" className='rightFront'/>
