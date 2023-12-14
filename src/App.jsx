@@ -56,7 +56,7 @@ function App() {
         scrub: true,
         onUpdate: (self) => {
           // Interpola manualmente entre los colores de inicio y fin
-          const startColor = { r: 22, g: 100, b: 47 }; // RGB para el color de inicio (blue)
+          const startColor = { r: 0, g: 0, b: 0 }; // RGB para el color de inicio (blue)
           const endColor = { r: 255, g: 255, b: 255 }; // RGB para el color de fin (rojo)
   
           const interpolatedColor = {
@@ -81,8 +81,8 @@ function App() {
     <>
       <ContactForm show ={show} setShow={setShow}/>
       <Hero setShow={setShow} targetRef={scrollToTarget}/>
-      <Cave/>
       <AdTapes/>
+      <Cave/>
       <Portfolio ref={change1}/>
       <LikeWhatYouSee setShow={setShow}/>
       <DesignProcess/>
