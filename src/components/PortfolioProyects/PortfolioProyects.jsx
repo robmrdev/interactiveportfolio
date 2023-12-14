@@ -21,17 +21,17 @@ const PortfolioProyects = () => {
   useEffect(() => {
     const container = containerRef.current
     const element = boxRef.current;
-    const right11 = right1.current
-    const right21 = right2.current
-    const right31 = right3.current
-    const right41 = right4.current
-    const right51 = right5.current
+    const right11 = right1.current;
+    const right21 = right2.current;
+    const right31 = right3.current;
+    const right41 = right4.current;
+    const right51 = right5.current;
     const path = [
-      { x: '45vw', y: '25vh' },
-      { x: '25vw', y: '70vh' },
-      { x: '45vw', y: '110vh' },
-      { x: '25vw', y: '150vh' },
-      { x: '45vw', y: '190vh' },
+      { x: '45vw', y: '20vh' },
+      { x: '25vw', y: '65vh' },
+      { x: '45vw', y: '105vh' },
+      { x: '25vw', y: '145vh' },
+      { x: '45vw', y: '185vh' },
       // { x: '25vw', y: '220vh' },
       // { x: '45vw', y: '230vh' }
     ];
@@ -54,19 +54,21 @@ const PortfolioProyects = () => {
       },
     });
     const tl = gsap.timeline({
+      ease: "expoScale(0.5,7,none)",
       scrollTrigger: {
         trigger: container,
         start: 'top 50%',
         end: '75% 50%',
         scrub: 2,
+        duration:500
         // markers: true,
       }
     })
-    tl.fromTo(right11, { x: '110vw' }, { x: '60vw' })
-    tl.fromTo(right21, { x: '110vw' }, { x: '50vw' })
-    tl.fromTo(right31, { x: '110vw' }, { x: '60vw' })
-    tl.fromTo(right41, { x: '110vw' }, { x: '50vw' })
-    tl.fromTo(right51, { x: '110vw' }, { x: '60vw' })
+    tl.fromTo(right11, { x: '110vw', opacity: -1 }, { x: '60vw', opacity:1 })
+    tl.fromTo(right21, { x: '110vw', opacity: -1 }, { x: '50vw', opacity:1 })
+    tl.fromTo(right31, { x: '110vw', opacity: -1 }, { x: '60vw', opacity:1 })
+    tl.fromTo(right41, { x: '110vw', opacity: -1 }, { x: '50vw', opacity:1 })
+    tl.fromTo(right51, { x: '110vw', opacity: -1 }, { x: '60vw', opacity:1 })
   }, []);
 
 

@@ -7,8 +7,13 @@
     --lightFont: antiquewhite;
     font-family: 'Poppins', sans-serif;
 }
+body{
+  background-color: #16642f;
+}
 #root{
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 }
 
 .darkFont{

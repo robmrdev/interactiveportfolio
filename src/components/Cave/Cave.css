@@ -1,0 +1,26 @@
+
+.caveWrapper{
+    height: 130vh;
+    margin-top: 20vh;
+}
+.caveContainer{
+    position: relative;
+    height: 100%;
+    /* width: 100vw; */
+    overflow: hidden;
+}
+.caveContainer img{
+    position: absolute;
+}
+.caveBg{
+    height: 100%;
+    right: 0;
+}
+.topCave{
+    top: 0;
+    width: 100%;
+}
+.bottomCave{
+    bottom: 0;
+    width: 100%;
+}

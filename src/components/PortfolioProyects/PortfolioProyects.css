@@ -19,6 +19,7 @@
 .box {
     position: relative;
     left: -10vw;
+    top:5vw;
     /* background-color: black; */
     width: 80px;
     height: 80px;

@@ -14,14 +14,17 @@ const Hero = ({ setShow, targetRef }) => {
                 </div>
             </header>
             <div className='heroBackground'>
-                <img src="./hero/land.png" alt="" className='land' />
+                <img src="./hero/bg5.jpg" alt="" srcset="" className='backgroundImg'/>
+                <img src="./hero/path3.png" alt="" srcset="" className='leftMiddle'/>
+                <img src="./hero/rightPath.png" alt="" srcset="" className='rightFront'/>
+                {/* <img src="./hero/land.png" alt="" className='land' />
                 <img src="./hero/treeLeft.png" alt="" className='treeLeft' />
                 <img src="./hero/treeRight.png" alt="" className='treeRight' />
                 <img src="./hero/mountain.png" alt="" srcset="" className='mountain' />
                 <div className='seaContainer'>
                     <img src="./hero/sea.png" alt="" srcset="" className='sea' />
                 </div>
-                <img src="./hero/sun.png" alt="" srcset="" className='sun' />
+                <img src="./hero/sun.png" alt="" srcset="" className='sun' /> */}
                 <div className='heroWrapper darkFont contentWrapper'>
                     <div className='heroContentWrapper'><div className='topTitleWrapper textGlow'>
                         <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p>
