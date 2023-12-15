@@ -17,10 +17,10 @@
     position: absolute;
 }
 .backgroundImg{
-    position: absolute;
     min-width: 100vw;
     z-index: -10;
     width: 130.41%;
+    top: -20%;
 }
 .leftMiddle{
     height: 110%;
