@@ -1,10 +1,93 @@
 import './Hero.css'
 import React from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
+import { gsap } from 'gsap';
+
+
 const Hero = ({ setShow, targetRef }) => {
 
     const text = "The web you were looking for is Here!";
     const words = text.split(' ');
     let indexCounter = 0;
+
+    let timeline = gsap.timeline();
+
+    const [mouseOffset, setMouseOffset] = useState({ offsetX: 0, offsetY: 0 });
+    const [clientX, setClientX] = useState()
+    const [rotateDegree, setRotateDegree] = useState(0)
+    useLayoutEffect(() => {
+        const parallaxEl = document.querySelectorAll('.parallax')
+
+        let ctx = gsap.context(() => {
+            Array.from(parallaxEl).filter(e => !e.classList.contains('text')).forEach((e) => {
+                const fromEl = e.getAttribute('data-fromdata');
+
+                let timeline = gsap.timeline();
+                timeline.from(e, {
+                    top: `${fromEl}`,
+                    duration: 4,
+                    ease: "power3.out"
+                })
+            })
+            // timeline.from(".text h1", {
+            //     y: window.innerHeight - document.querySelector('.text h1').getBoundingClientRect().top,
+            //     duration: 2,
+            // },
+            //     "2")
+            //     .from('.text h2', {
+            //         y: -200,
+            //         opacity: 0,
+            //         duration: 1.5,
+            //     }, "2.5")
+            //     .from('.hide', {
+            //         opacity: 0,
+            //         duration: 1.5
+            //     }, "2.5")
+
+
+        });
+
+        return () => ctx.revert()
+    }, [])
+    useEffect(() => {
+        const heroSection = document.querySelector('.heroBackground');
+
+        const handleMouseMove = (event) => {
+            if (timeline.isActive()) return;
+            const { clientX, clientY } = event;
+            const boundingBox = heroSection.getBoundingClientRect();
+            const centerX = boundingBox.left + boundingBox.width / 2;
+            const centerY = boundingBox.top + boundingBox.height / 2;
+            const offsetX = clientX - centerX;
+            const offsetY = clientY - centerY;
+            let newRotateDegree = ((offsetX / (window.innerWidth / 2)) * 20)
+            setRotateDegree(newRotateDegree)
+            setClientX(clientX)
+            setMouseOffset({ offsetX, offsetY });
+        };
+
+        heroSection.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            heroSection.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
+    useEffect(() => {
+        const parallaxElements = document.querySelectorAll('.parallax');
+        parallaxElements.forEach((el) => {
+            let speedx = el.dataset.speedx;
+            let speedy = el.dataset.speedy;
+            let speedz = el.dataset.speedz;
+            let rotateSpeed = el.dataset.rotation;
+
+            const isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
+            let zValue = (clientX - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
+            el.style.transform = ` rotateY(${rotateDegree * rotateSpeed}deg) translateZ(${zValue * speedz}px) translateX(calc( ${-mouseOffset.offsetX * speedx}px)) translateY(calc(${mouseOffset.offsetY * speedy}px))`;
+        });
+    }, [mouseOffset]);
+
+
     return (
         <>
             <header>
@@ -15,22 +98,15 @@ const Hero = ({ setShow, targetRef }) => {
             </header>
             <div className='heroBackground'>
                 <div className='heroVignette'></div>
-                <img src="./hero/bg5.jpg" alt="" srcset="" className='backgroundImg'/>
-                <img src="./hero/path3.png" alt="" srcset="" className='leftMiddle'/>
-                <img src="./hero/rightPath.png" alt="" srcset="" className='rightFront'/>
-                {/* <img src="./hero/land.png" alt="" className='land' />
-                <img src="./hero/treeLeft.png" alt="" className='treeLeft' />
-                <img src="./hero/treeRight.png" alt="" className='treeRight' />
-                <img src="./hero/mountain.png" alt="" srcset="" className='mountain' />
-                <div className='seaContainer'>
-                    <img src="./hero/sea.png" alt="" srcset="" className='sea' />
-                </div>
-                <img src="./hero/sun.png" alt="" srcset="" className='sun' /> */}
+                <img src="./hero/bg5.jpg" alt="" srcset="" data-fromdata="100%" data-rotation="0" data-speedx="0.2" data-speedy="0.1" data-speedz="0" className='backgroundImg parallax' />
+                <img src="./hero/path3.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.2" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" className='leftMiddle parallax' />
+                <img src="./hero/rightPath.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.05" data-speedx="0.04" data-speedy="0.025" data-speedz="0.32" className='rightFront parallax' />
                 <div className='heroWrapper darkFont contentWrapper'>
-                    <div className='heroContentWrapper'><div className='topTitleWrapper textGlow'>
-                        <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p>
-                        <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
-                    </div>
+                    <div data-rotation="0.11" data-speedx="0.02" data-speedy="0.02" data-speedz="0.02" className='heroContentWrapper parallax'>
+                        <div className='topTitleWrapper textGlow'>
+                            <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p>
+                            <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
+                        </div>
                         <h3 className='heroText textGlow'>
                             {words.map((word, wordIndex) => (
                                 <React.Fragment key={wordIndex}>

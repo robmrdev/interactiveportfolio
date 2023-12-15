@@ -1,21 +1,36 @@
-.backgroundImg{
-    width: 100%;
+
+.heroBackground {
+    display: flex;
     position: relative;
-    top: 0%;
-    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    overflow: hidden;
     z-index: -10;
+    perspective: 2300px;
+}
+.heroBackground>img {
+    position: absolute;
+}
+.backgroundImg{
+    position: absolute;
+    min-width: 100vw;
+    z-index: -10;
+    width: 130.41%;
 }
 .leftMiddle{
-    height: 100%;
-    position: relative;
+    height: 110%;
     bottom: 0;
-    left: 0;
+    left: -5%;
 }
 .rightFront{
-    position: relative;
-    right: 0;
+    right: -3%;
     bottom: 0;
-    width: 90%;
+    height: 30%;
 
 }
 .heroVignette{
@@ -36,24 +51,6 @@
   }
 
 
-/* .textGlow {
-    color: black; 
-    position: relative;
-    
-}
-
-.textGlow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -10px;
-    right: 10px;
-    z-index: -1;
-    width: calc(100% + 20px);
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.595); 
-    filter: blur(10px);
-} */
 .textGlow {
     color: black;
     /* Color del texto */
@@ -71,76 +68,8 @@
     bottom: 0;
     z-index: -1;
     background-color: rgba(239, 242, 184, 0.595);
-    /* Color del resplandor */
     filter: blur(50px);
-    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
 }
-
-.heroBackground {
-    /* background-color: var(--darkFont); */
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 40px;
-    height: 110vh;
-    background-color: transparent;
-    overflow: hidden;
-    z-index: -10;
-}
-
-.heroBackground>img {
-    position: absolute;
-}
-
-.land {
-    bottom: 0;
-    z-index: 1;
-}
-
-.treeLeft {
-    left: 10%;
-    bottom: 12%;
-    width: 30vh;
-    z-index: 0;
-}
-
-.treeRight {
-    right: 10%;
-    bottom: 12%;
-    width: 30vh;
-    z-index: 0;
-}
-
-.mountain {
-    bottom: 317px;
-    z-index: -1;
-}
-
-.seaContainer {
-    position: absolute;
-    bottom: 120px;
-    height: 209px;
-    z-index: -2;
-    background-color: white;
-}
-
-.sea {
-    z-index: -2;
-    background-color: rgba(26, 72, 112, 0.4);
-    animation: waterMoves 5s linear infinite;
-}
-
-.sun {
-    z-index: -3;
-    bottom: 330px;
-    min-width: 400px;
-    width: 35%;
-    animation: sunAppears 2s linear;
-}
-
 header {
     position: absolute;
     width: 100%;
@@ -149,7 +78,6 @@ header {
     padding: 0 5%;
     height: 10vh;
 }
-
 header>div {
     width: 100%;
     max-width: 1600px;
@@ -175,6 +103,8 @@ header p {
     align-items: center;
     color: var(--darkFont);
     z-index: 10;
+    position: absolute;
+    top: 0;
 }
 
 .heroContentWrapper .topTitleWrapper {
@@ -266,40 +196,9 @@ header p {
     opacity: 0;
     transform: translateY(10px);
     animation: appearBottom 0.5s ease-in-out forwards;
-    /* background-color: black; */
 }
 
-@keyframes sunAppears {
-    from {
-        bottom: -100px;
-    }
 
-    to {
-        bottom: 330px;
-    }
-}
-
-@keyframes waterMoves {
-    0% {
-        /* transform: translate(0); */
-    }
-
-    
-    33% {
-        rotate: 0.5deg;
-        transform: translateY(5px) translateX(-15px);
-    }
-
-    
-    66% {
-        transform: translateY(-5px) translateX(15px);
-        rotate: -0.5deg;
-    }
-
-    /* 75%{
-        transform: translateY(0);
-    } */
-}
 
 @keyframes appearBottom {
     from {
