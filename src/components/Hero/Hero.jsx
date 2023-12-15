@@ -23,28 +23,15 @@ const Hero = ({ setShow, targetRef }) => {
                 const fromEl = e.getAttribute('data-fromdata');
 
                 let timeline = gsap.timeline();
+                timeline.to(".heroContentWrapper", {
+                    opacity: 1
+                }),
                 timeline.from(e, {
                     top: `${fromEl}`,
                     duration: 4,
                     ease: "power3.out"
                 })
             })
-            // timeline.from(".text h1", {
-            //     y: window.innerHeight - document.querySelector('.text h1').getBoundingClientRect().top,
-            //     duration: 2,
-            // },
-            //     "2")
-            //     .from('.text h2', {
-            //         y: -200,
-            //         opacity: 0,
-            //         duration: 1.5,
-            //     }, "2.5")
-            //     .from('.hide', {
-            //         opacity: 0,
-            //         duration: 1.5
-            //     }, "2.5")
-
-
         });
 
         return () => ctx.revert()
@@ -98,14 +85,14 @@ const Hero = ({ setShow, targetRef }) => {
             </header>
             <div className='heroBackground'>
                 <div className='heroVignette'></div>
-                <img src="./hero/bg5.jpg" alt="" srcset="" data-fromdata="100%" data-rotation="0" data-speedx="0.2" data-speedy="0.1" data-speedz="0" className='backgroundImg parallax' />
+                <img src="./hero/bg5.webp" alt="" srcset="" data-fromdata="4%" data-rotation="0" data-speedx="0.2" data-speedy="0.1" data-speedz="0" className='backgroundImg parallax' />
                 <img src="./hero/path3.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.2" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" className='leftMiddle parallax' />
                 <img src="./hero/rightPath.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.05" data-speedx="0.04" data-speedy="0.025" data-speedz="0.32" className='rightFront parallax' />
                 <div className='heroWrapper darkFont contentWrapper'>
                     <div data-rotation="0.11" data-speedx="0.02" data-speedy="0.02" data-speedz="0.02" className='heroContentWrapper parallax'>
                         <div className='topTitleWrapper textGlow'>
-                            <p className='topTitle'>I'm Robert Mendoza, an&nbsp;</p>
-                            <h1 className='topTitle'>Argentina Web Developer & designer.</h1>
+                            <p className='topTitle textGlow'>I'm Robert Mendoza, an&nbsp;</p>
+                            <h1 className='topTitle textGlow'>Argentina Web Developer & designer.</h1>
                         </div>
                         <h3 className='heroText textGlow'>
                             {words.map((word, wordIndex) => (
@@ -119,7 +106,10 @@ const Hero = ({ setShow, targetRef }) => {
                                                     key={letterIndex}
                                                     className='heroCharacter'
                                                     style={{
-                                                        animationDelay: `${0.05 * indexCounter}s`
+                                                        animationDelay: `${
+                                                            wordIndex === 0 && letterIndex === 0 ? 1.5 : (0.05 * indexCounter) + 1.5
+                                                          }s`
+                                                        // animationDelay: `${0.05 * indexCounter}s`
                                                     }}
                                                 >
                                                     {letter === ' ' ? '\u00A0' : letter}

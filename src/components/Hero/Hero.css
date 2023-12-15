@@ -53,20 +53,22 @@
 
 .textGlow {
     color: black;
-    /* Color del texto */
     position: relative;
     display: inline-block;
-    /* Para que el fondo se ajuste al contenido del texto */
 }
 
 .textGlow::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -10px;
-    right: -10px;
+    opacity: 0;
+    /* left: -10px;
+    right: -10px; */
     bottom: 0;
     z-index: -1;
+    /* background-color: rgba(215, 0, 252, 0.595); */
+    animation: glowAppear linear 3s forwards;
+    animation-delay: 1s;
     background-color: rgba(239, 242, 184, 0.595);
     filter: blur(50px);
 }
@@ -96,6 +98,7 @@ header p {
 }
 
 .heroContentWrapper {
+    opacity: 0;
     padding: 5em 2em 3.2em;
     background-color: transparent;
     display: flex;
@@ -105,13 +108,14 @@ header p {
     z-index: 10;
     position: absolute;
     top: 0;
+    height: 100%;
 }
 
 .heroContentWrapper .topTitleWrapper {
     display: flex;
     font-size: 1vw;
     opacity: 0;
-    animation: appear ease-in-out 1s forwards;
+    animation: appear ease-in-out 2s forwards;
     animation-delay: 0.55s;
 }
 
@@ -120,7 +124,6 @@ header p {
     margin-bottom: 0;
     font-size: 14px;
     font-style: italic;
-    /* font-weight: 400; */
     line-height: 1.2;
     display: inline;
 }
@@ -155,14 +158,13 @@ header p {
     padding: 0 10px;
 }
 
-
 .heroP {
+    opacity: 0;
     font-size: 20px;
     line-height: 1.4em;
     margin-bottom: 10px;
-    opacity: 0;
     animation: appear ease-in-out 1s forwards;
-    animation-delay: 0.85s;
+    animation-delay: 3s;
     padding: 10px 0;
 }
 
@@ -173,7 +175,7 @@ header p {
     gap: 20px;
     opacity: 0;
     animation: appear ease-in-out 1s forwards;
-    animation-delay: 0.99s;
+    animation-delay: 3.5s;
 }
 
 .heroButton {
@@ -218,6 +220,21 @@ header p {
     }
 
     to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes glowAppear {
+    from {
+        left: 50%;
+        right: 50%;
+        opacity: 0;
+    }
+
+    to {
+        left: -10px;
+        right: -10px;
         opacity: 1;
     }
 }
