@@ -12,7 +12,7 @@ const waveEffect = (text) => {
     const words = text.split(' ');
     let indexCounter = 0;
     const component =
-        <h2 className={`sectionTitle contactTitle ${animationStarted ? 'animationStarted' : ''}`}
+        <h2 className={`sectionTitle textGlow contactTitle ${animationStarted ? 'animationStarted' : ''}`}
             onMouseEnter={startAnimation}
             key={key}>
             {words.map((word, wordIndex) => (

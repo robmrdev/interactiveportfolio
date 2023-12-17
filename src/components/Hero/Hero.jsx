@@ -1,5 +1,5 @@
 import './Hero.css'
-import React from 'react';
+import React, { useRef } from 'react';
 import { useEffect, useState, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
@@ -26,11 +26,11 @@ const Hero = ({ setShow, targetRef }) => {
                 timeline.to(".heroContentWrapper", {
                     opacity: 1
                 }),
-                timeline.from(e, {
-                    top: `${fromEl}`,
-                    duration: 4,
-                    ease: "power3.out"
-                })
+                    timeline.from(e, {
+                        top: `${fromEl}`,
+                        duration: 4,
+                        ease: "power3.out"
+                    })
             })
         });
 
@@ -38,9 +38,8 @@ const Hero = ({ setShow, targetRef }) => {
     }, [])
     useEffect(() => {
         const heroSection = document.querySelector('.heroBackground');
-
         const handleMouseMove = (event) => {
-            if (timeline.isActive()) return;
+            if (timeline.isActive() || !heroSection) return; //if (timeline.isActive()) return;
             const { clientX, clientY } = event;
             const boundingBox = heroSection.getBoundingClientRect();
             const centerX = boundingBox.left + boundingBox.width / 2;
@@ -52,12 +51,16 @@ const Hero = ({ setShow, targetRef }) => {
             setClientX(clientX)
             setMouseOffset({ offsetX, offsetY });
         };
+        if (heroSection) {
+            heroSection.addEventListener('mousemove', handleMouseMove);
+        }
+        // heroSection.addEventListener('mousemove', handleMouseMove);
 
-        heroSection.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            heroSection.removeEventListener('mousemove', handleMouseMove);
-        };
+        // return () => {
+        //     if (heroSection) {
+        //         heroSection.removeEventListener('mousemove', handleMouseMove);
+        //     }
+        // };
     }, []);
 
     useEffect(() => {
@@ -106,9 +109,8 @@ const Hero = ({ setShow, targetRef }) => {
                                                     key={letterIndex}
                                                     className='heroCharacter'
                                                     style={{
-                                                        animationDelay: `${
-                                                            wordIndex === 0 && letterIndex === 0 ? 1.5 : (0.05 * indexCounter) + 1.5
-                                                          }s`
+                                                        animationDelay: `${wordIndex === 0 && letterIndex === 0 ? 1.5 : (0.05 * indexCounter) + 1.5
+                                                            }s`
                                                         // animationDelay: `${0.05 * indexCounter}s`
                                                     }}
                                                 >
@@ -137,29 +139,3 @@ const Hero = ({ setShow, targetRef }) => {
 }
 
 export default Hero
-
-
-
-{/* <h3 className='heroText'>
-      {words.map((word, wordIndex) => (
-        <React.Fragment key={wordIndex}>
-          {wordIndex > 0 && <span className="wordSpace">&nbsp;</span>}
-          <span className='heroWord'>
-            {word.split('').map((letter, letterIndex) => (
-              <span
-                key={letterIndex}
-                className='heroCharacter'
-                style={{
-                  opacity: 0,
-                  transform: 'translateY(10px)',
-                  animation: 'appear 0.5s ease-in-out forwards',
-                  animationDelay: `${0.1 * (wordIndex + 1) + 0.1 * (letterIndex + 1)}s`
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </span>
-        </React.Fragment>
-      ))}
-    </h3> */}

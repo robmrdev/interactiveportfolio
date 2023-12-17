@@ -1,16 +1,28 @@
+.portfolioOuter{
+    overflow: hidden;
+    max-height: 100vh;
+}
 .portfolioWrapper{
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    max-height: 100vh;
+}
+.portfolioPanel{
+    width: 100%;
+    height: 100vh;
+}
+.sample{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    height: 400vh;
+    background-color: white;
 }
-
-.portfolioWrapper>p{
-    max-width: 60em;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-
-.portfolioItemsWrapper{
-    height: 100vh;
+.sample p{
+    background-color: red;
+    width: 100%;
 }

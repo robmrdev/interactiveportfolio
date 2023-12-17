@@ -1,0 +1,69 @@
+.heroMain{
+    z-index: -99;
+    position: relative;
+}
+.panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.container {
+    width: 600vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.projectsMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30vh;
+}
+.projectsMain h2{
+    margin-left: 20%;
+    width: 40%;
+}
+.projectsMain p{
+    width: 50%;
+    margin-left: 10%;
+}
+.projectItem{
+    margin: 0 auto;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.projectItem img{
+    width: 100%;
+}
+.lastContainer {
+    /* z-index: 99; */
+    display: flex;
+    height: 100vh;
+    background: rgba(255, 255, 0, 0.264);
+}
+.caveBg{
+    height: 100vh;
+    left: 0;
+}
+.topCave{
+    top: -5vh;
+    left: 0;
+    width: 100vw;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+}
+.bottomCave{
+    bottom: 0;
+    width: 100vw;
+}
+
+.caveContainer{
+    position: sticky;
+    /* position: relative;
+    height: 100vh; */
+}
+.caveContainer img{
+    position: absolute;
+}

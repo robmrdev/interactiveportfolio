@@ -1,6 +1,7 @@
 .caveWrapper{
     margin-top: 5vh;
-    height: 130vh;
+    height: 100vh;
+    max-height: 100vh;
 }
 .caveContainer{
     position: relative;
@@ -26,4 +27,22 @@
 .bottomCave{
     bottom: 0;
     width: 100%;
+}
+.portfolioOuter{
+    /* bottom: 0; */
+    overflow: hidden;
+    max-height: 100vh;
+}
+.portfolioWrapper{
+    position: absolute;
+    top: 0;
+    width: 600vw;
+    display: flex;
+}
+.portfolioPanel{
+    width: 100%;
+    height: 100vh;
+}
+.portfolioPanel img{
+    width: 50%;
 }

@@ -1,12 +1,11 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+import './Proyects.css'
+import React, { useEffect, useRef } from 'react'
 import { waveEffect } from '../../utils/utils'
-import PortfolioProyects from '../PortfolioProyects/PortfolioProyects'
-import './Portfolio.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-const Portfolio = () => {
+const Proyects = () => {
   gsap.registerPlugin(ScrollTrigger);
   const component = useRef()
   const wrapperRef = useRef()
@@ -32,11 +31,14 @@ const Portfolio = () => {
     return () => ctx.revert();
   })
 
-
   return (
-    <>
-      <section className='portfolioOuter' ref={component}>
-        <div className='portfolioWrapper' ref={wrapperRef}>
+    <section className='caveWrapper' ref={component}>
+      <div className='caveContainer' ref={wrapperRef}>
+        <img src="./cave/caveBg.jpg" alt="" className='caveBg' />
+        <img src="./cave/topCaveVignetteMargin.png" alt="" className='topCave' />
+        <img src="./cave/bottomCave.png" alt="" className='bottomCave' />
+        <img src="./cave/caveCharacter.png" alt="" className='caveCharacter' />
+        <div className='portfolioWrapper'>
           <div className='portfolioPanel'>
             {waveEffect('Featured Website Proyects')}
             <p>Behold the evolution I've been through over time! At the start, we're talking basic HTML -
@@ -48,32 +50,21 @@ const Portfolio = () => {
             <img src='./uku.jpg' />
           </div>
           <div className="portfolioPanel">
-
             <img src='./quiz.jpg' className='breathAnimationY animation4' />
           </div>
           <div className="portfolioPanel">
-
             <img src='./fakeIkea.jpg' className='breathAnimationY animation2' />
           </div>
           <div className="portfolioPanel">
-
             <img src='./oldPortfolio.jpg' className='breathAnimationY animation3' />
           </div>
           <div className="portfolioPanel">
-
             <img src='./treeStore.jpg' className='breathAnimationY animation1' />
           </div>
         </div>
-      </section>
-      <div className='sample'>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
       </div>
-    </>
+    </section>
   )
 }
 
-export default Portfolio
+export default Proyects

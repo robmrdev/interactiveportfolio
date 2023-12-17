@@ -38,7 +38,7 @@
     height: 30%;
     position: absolute;
     bottom: 0;
-    z-index: 100;
+    z-index: 9;
 }
 .heroVignette::before {
     content: "";
