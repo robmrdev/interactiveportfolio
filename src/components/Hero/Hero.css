@@ -1,4 +1,3 @@
-
 .heroBackground {
     display: flex;
     position: relative;
@@ -13,33 +12,54 @@
     z-index: -10;
     perspective: 2300px;
 }
+
 .heroBackground>img {
     position: absolute;
 }
-.backgroundImg{
+
+.bigCloud {
+    opacity: .2;
+    /* height: 70%; */
+    top: 10%;
+    animation: cloudMovement 120s linear infinite;
+}
+
+.smallClouds {
+    opacity: .3;
+    white-space: wrap;
+    /* height: 50%; */
+    top: 20%;
+    animation: cloudMovement 120s linear infinite;
+}
+
+.backgroundImg {
     min-width: 110vw;
     z-index: -10;
     height: 140%;
     top: -20%;
 }
-.leftMiddle{
+
+.leftMiddle {
     height: 110%;
     bottom: 0;
     left: -5%;
 }
-.rightFront{
+
+.rightFront {
     right: -3%;
     bottom: 0;
     height: 30%;
 
 }
-.heroVignette{
+
+.heroVignette {
     width: 100%;
     height: 30%;
     position: absolute;
     bottom: 0;
     z-index: 9;
 }
+
 .heroVignette::before {
     content: "";
     position: absolute;
@@ -48,7 +68,7 @@
     width: 100%;
     height: 50%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
-  }
+}
 
 
 .textGlow {
@@ -72,6 +92,7 @@
     background-color: rgba(239, 242, 184, 0.595);
     filter: blur(50px);
 }
+
 header {
     position: absolute;
     width: 100%;
@@ -80,6 +101,7 @@ header {
     padding: 0 5%;
     height: 10vh;
 }
+
 header>div {
     width: 100%;
     max-width: 1600px;
@@ -237,5 +259,15 @@ header p {
         left: -10px;
         right: -10px;
         opacity: 1;
+    }
+}
+
+@keyframes cloudMovement {
+    from {
+        left: -20vw
+    }
+
+    to {
+        left: 100vw
     }
 }

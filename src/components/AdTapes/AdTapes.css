@@ -1,10 +1,11 @@
 .adTapesWrapper{
     /* padding: 100px 0; */
     /* padding-top: 80px; */
-    margin-top: 50px;
+    padding-top: 50px;
     width: 100vw;
     position: relative;
     z-index: 10;
+    background-color: black;
 }
 .adTapeTex{
     overflow: hidden;

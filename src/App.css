@@ -7,9 +7,6 @@
     --lightFont: antiquewhite;
     font-family: 'Poppins', sans-serif;
 }
-body{
-  background-color: black;
-}
 #root{
   overflow: hidden;
   z-index: 1;
@@ -21,6 +18,9 @@ body{
 }
 .lightFont{
     color: var(--lightFont);
+}
+body{
+  background-color: black;
 }
 
 

@@ -56,17 +56,18 @@ function App() {
 
   return (
     <>
-      {/* <ContactForm show ={show} setShow={setShow}/> */}
-      {/* <Hero setShow={setShow}/> */}
-      {/* <AdTapes/> */}
-      {/* <Proyects/> */}
-      <Sample/>
+      <ContactForm show ={show} setShow={setShow}/>
+      <Hero setShow={setShow}/>
+      <AdTapes/>
+      <Proyects/>
+      {/* <Sample/> */}
       {/* <Portfolio/> */}
-      {/* <LikeWhatYouSee setShow={setShow}/>
+      <LikeWhatYouSee setShow={setShow}/>
       <DesignProcess/>
       <OurTeam/>
       <YourWebsite setShow={setShow}/>
-      <Footer/> */}
+      <Footer/>
+      {/* <Sample2/> */}
     </>
   )
 }

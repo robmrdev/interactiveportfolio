@@ -88,6 +88,8 @@ const Hero = ({ setShow, targetRef }) => {
             </header>
             <div className='heroBackground'>
                 <div className='heroVignette'></div>
+                <img src="./hero/bigCloud.png" alt="" className='bigCloud'/>
+                <img src="./hero/smallClouds.png" alt="" className='smallClouds'/>
                 <img src="./hero/bg5.webp" alt="" srcset="" data-fromdata="4%" data-rotation="0" data-speedx="0.2" data-speedy="0.1" data-speedz="0" className='backgroundImg parallax' />
                 <img src="./hero/path3.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.2" data-speedx="0.027" data-speedy="0.018" data-speedz="0.53" className='leftMiddle parallax' />
                 <img src="./hero/rightPath.png" alt="" srcset="" data-fromdata="300%" data-rotation="0.05" data-speedx="0.04" data-speedy="0.025" data-speedz="0.32" className='rightFront parallax' />
